@@ -12,8 +12,9 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-10  border ">
-	<% render  'shared/flash' %>
+  <%= render 'shared/navbar' %>
+    <main class="container mx-auto mt-10   ">
+	<% render 'shared/flash' %>
       <%= yield %>
     </main>
   </body>
