@@ -6,7 +6,8 @@
                  url: registration_path(resource_name),
                  html: {
                          class: "form-container"
-                 }
+                 },
+				 data: { turbo: false}
         ) do |f| %>
 
         <%= devise_error_messages! %>

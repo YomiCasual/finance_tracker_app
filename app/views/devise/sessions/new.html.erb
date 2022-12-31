@@ -6,7 +6,8 @@
                  url: session_path(resource_name),
                  html: {
                          class: "form-container"
-                 }
+                 },
+				 data: { turbo: false}
         ) do |f| %>
 
         <%= devise_simple_error_messages! %>
