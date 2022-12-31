@@ -2,45 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn-primary {
-    @apply rounded-md px-2 py-2 bg-blue-600 text-white font-medium cursor-pointer inline-block;
-  }
+.app-container {
+  @apply container mx-auto;
+}
 
-  .btn-sec {
-    @apply btn-primary bg-gray-100 text-black;
-  }
-  .btn-success {
-    @apply btn-primary bg-green-500;
-  }
-  .btn-danger {
-    @apply btn-primary bg-red-500;
-  }
+.alert {
+  @apply bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 app-container;
+}
 
-  .input-field {
-    @apply !block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full;
-  }
-  .input-field-sec {
-    @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full;
-  }
+.notice {
+  @apply alert !border-green-500 !text-green-700 !bg-green-100;
+}
 
-  .badge {
-    @apply bg-gray-800 px-2 py-1 rounded-md text-xs inline-block !text-white;
-  }
+.form-container {
+  @apply bg-white mb-4 px-8 pt-6 pb-8 rounded shadow-md max-w-2xl mx-auto;
+}
 
-  .badge-primary {
-    @apply badge bg-blue-500;
-  }
-  .badge-secondary {
-    @apply badge bg-green-500;
-  }
-  .badge-danger {
-    @apply badge bg-red-500;
-  }
+.form-header {
+  @apply mb-6 text-center text-3xl font-bold;
+}
 
-  .text-header {
-    @apply text-3xl block font-bold;
-  }
+.input-field {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none;
+}
+
+.label-field {
+  @apply block text-gray-700 text-sm font-bold mb-2;
+}
+
+.btn-primary {
+  @apply cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none  w-full;
+}
+
+.btn-sec {
+  @apply btn-primary bg-gray-100 text-black;
+}
+.btn-success {
+  @apply btn-primary bg-green-500;
+}
+.btn-danger {
+  @apply btn-primary !bg-red-500;
+}
+
+.input-field {
+  @apply !block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full;
+}
+.input-field-sec {
+  @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full;
+}
+
+.badge {
+  @apply bg-gray-800 px-2 py-1 rounded-md text-xs inline-block !text-white;
+}
+
+.badge-primary {
+  @apply badge bg-blue-500;
+}
+.badge-secondary {
+  @apply badge bg-green-500;
+}
+.badge-danger {
+  @apply badge bg-red-500;
+}
+
+.text-header {
+  @apply text-3xl block font-bold;
 }
 
 .flickr_pagination {

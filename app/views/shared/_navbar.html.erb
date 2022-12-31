@@ -4,5 +4,20 @@
 </div>
 <div class="flex items-center gap-3">
 
+<%  if user_signed_in? %>
+<p><%= current_user.email %></p>
+
+<%= button_to "Sign Out", destroy_user_session_path, method: :delete, form: {data: {  turbo: false,turbo_confirm: "Are you sure"} } , class: "btn-primary" %>
+
+
+
+<%  else %>
+
+
+<%= link_to "Register", new_user_registration_path  %>
+<%= link_to "Login", new_user_session_path  %>
+<% end %>
+
+
 </div>
 </div>

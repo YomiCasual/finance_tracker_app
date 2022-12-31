@@ -1,6 +1,11 @@
-<% if notice.present? %>
-	<p class="bg-green-200 px-2 py-2 rounded-md mt-4 container mx-auto"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-	<p class="bg-red-200 px-2 py-2 rounded-md mt-4 container mx-auto"><%= alert %></p>
+
+
+<% if flash.present? %>
+                <%- flash.each do |name, msg| -%>
+            <div class="mt-4 <%= name %> " role="alert">
+                    <%= content_tag :p,
+                                    msg.humanize,
+                                    id: "flash_#{name}" if msg.is_a?(String) %>
+            </div>
+                <%- end -%>
 <% end %>
