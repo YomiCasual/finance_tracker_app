@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'devise-tailwindcssed'
 gem 'iex-ruby-client'
+gem "font-awesome-rails"
 
 
 # Use Sass to process CSS
