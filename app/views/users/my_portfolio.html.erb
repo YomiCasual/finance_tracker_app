@@ -3,34 +3,28 @@
 
   <div class="mt-8">
 	<h3 class="text-xl font-bold" >Search Stocks</h3>
- 
-	<%= form_with url: stock_search_path, method: :get, html: { class: "max-w-2xl flex items-stretch w-full mt-2"} do |f|  %>
-	<%= f.text_field :stock,
-				placeholder: "Enter stock symbol here", 
-				class: "input-field flex-auto w-[400px] !mt-0 !rounded-r-none", 
-				autofocus: true  %>
+	
+	<%= turbo_frame_tag 'stock' do %>
+		<%= form_with url: stock_search_path, method: :get, 
+		# local: false, 
+		html: { class: "max-w-2xl flex items-stretch w-full mt-2"} do |f|  %>
+		<input type="hidden" name="format" value="turbo_stream">
+			<%= f.text_field :stock,
+						value: "#{params[:stock]}",
+						placeholder: "Enter stock symbol here", 
+						class: "input-field flex-auto w-[400px] !mt-0 !rounded-r-none", 
+						autofocus: true  %>
 
-	<%= button_tag type: :submit, class: "btn-primary !w-[100px] !rounded-l-none", :name => nil do  %>
-	<%= fa_icon "search 2x" %>
-	<% end %>
+			<%= button_tag type: :submit, class: "btn-primary !w-[100px] !rounded-l-none", :name => nil do  %>
+			<%= fa_icon "search 2x" %>
+			<% end %>
+		<% end %>
 	<% end %>
   </div>
 
 </div>
 
+<div id="stock_card">
+</div>
 
-<% if @stock.present? %>
-  	<div class="mt-4 border rounded-md !px-5 !py-5 !w-[300px] flex flex-col gap-2 shadow-lg">
-		<p class="text-lg">
-		<span class="font-bold">Symbol: </span>	 
-		<%= @stock.ticker %></p>	
-		<p class="text-lg">
-		<span class="font-bold">Name: </span>	 
-		<%= @stock.name %>
-		</p>	
-		<p class="text-lg">
-		<span class="font-bold">Price: </span>	 
-		<%= @stock.last_price %>
-		</p>	
- 	</div>
-<% end %>
+

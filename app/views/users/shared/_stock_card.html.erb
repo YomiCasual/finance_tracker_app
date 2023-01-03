@@ -1,0 +1,17 @@
+<%= turbo_frame_tag 'stock' do %>
+<% if @stock.present? %>
+  	<div class="mt-4 border rounded-md !px-5 !py-5 !w-[300px] flex flex-col gap-2 shadow-lg">
+		<p class="text-lg">
+		<span class="font-bold">Symbol: </span>	 
+		<%= @stock.ticker %></p>	
+		<p class="text-lg">
+		<span class="font-bold">Name: </span>	 
+		<%= @stock.name %>
+		</p>	
+		<p class="text-lg">
+		<span class="font-bold">Price: </span>	 
+		<%= @stock.last_price %>
+		</p>	
+ 	</div>
+<% end %>
+<% end %>
