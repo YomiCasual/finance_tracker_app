@@ -11,4 +11,15 @@ class ApplicationController < ActionController::Base
 			render redirect_url,  status: :unprocessable_entity
 		end
 	end
+
+
+	def respond_with_stream(path: 'users/my_portfolio' )
+		respond_to do |format|
+			format.html { render path } 
+			format.turbo_stream
+			return
+		end
+	end
+
+
 end
