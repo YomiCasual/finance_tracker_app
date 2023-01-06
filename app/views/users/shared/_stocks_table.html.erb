@@ -1,0 +1,52 @@
+<% if @user_tracked_stocks.any? %>
+<div class="flex flex-col mt-8">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full">
+          <thead class="border-b bg-gray-800">
+            <tr>
+              <th scope="col" class="theader-text">
+                Ticker
+              </th>
+              <th scope="col" class="theader-text">
+                 Name
+              </th>
+              <th scope="col" class="theader-text">
+                Price
+              </th>
+              <th scope="col" class="theader-text">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+			<% @user_tracked_stocks.each do |stock| %>
+            <tr class="border-b">
+              <td class="tbody-text">
+			  	<%= stock.ticker  %>
+			  </td>
+              <td class="tbody-text">
+			  	<%= stock.name  %>
+			  </td>
+              <td class="tbody-text">
+			  	<%= stock&.last_price  %>
+			  </td>
+              <td class="tbody-text">
+			  	<%= "Actions"  %>
+			  </td>
+            </tr>
+			<% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% else %>
+
+	<div class="mt-8">
+		<h3 class="text-2xl font-bold">No stocks tracked</h3>
+	</div>
+<% end %>

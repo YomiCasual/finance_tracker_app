@@ -8,7 +8,7 @@
 		<%= form_with url: stock_search_path, method: :get, 
 		# local: false, 
 		html: { class: "max-w-2xl flex items-stretch w-full mt-2"} do |f|  %>
-		<input type="hidden" name="format" value="turbo_stream">
+		<input type="hidden" name="format" value="turbo_stream" />
 			<%= f.text_field :stock,
 						value: "#{params[:stock]}",
 						placeholder: "Enter stock symbol here", 
@@ -28,3 +28,5 @@
 </div>
 
 
+
+<%= render 'users/shared/stocks_table' %>

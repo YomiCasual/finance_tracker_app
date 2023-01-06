@@ -5,17 +5,20 @@
 <div class="flex items-center gap-3">
 
 <%  if user_signed_in? %>
-<p><%= link_to current_user.email, my_portfolio_path %></p>
+<p class="<%= active_nav_bar(my_portfolio_path) || active_nav_bar(root_path) %>"><%= link_to current_user.email, my_portfolio_path %></p>
 
 <%= button_to "Sign Out", destroy_user_session_path, method: :delete, form: {data: {  turbo: false,turbo_confirm: "Are you sure"} } , class: "btn-primary" %>
-
-
 
 <%  else %>
 
 
-<%= link_to "Register", new_user_registration_path  %>
+<p
+class="<%= active_nav_bar(new_user_registration_path) %>"> <%= link_to "Register", new_user_registration_path %></p>
+<p
+class="<%= active_nav_bar(new_user_session_path) %>"
+>
 <%= link_to "Login", new_user_session_path  %>
+</p>
 <% end %>
 
 

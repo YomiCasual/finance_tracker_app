@@ -6,6 +6,10 @@
   @apply container mx-auto;
 }
 
+.active-nav-bar {
+  @apply !text-yellow-500;
+}
+
 .alert {
   @apply bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 app-container;
 }
@@ -67,6 +71,13 @@
 
 .text-header {
   @apply text-3xl block font-bold;
+}
+
+.theader-text {
+  @apply text-sm font-medium text-white px-6 py-4 text-left;
+}
+.tbody-text {
+  @apply text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap;
 }
 
 .flickr_pagination {

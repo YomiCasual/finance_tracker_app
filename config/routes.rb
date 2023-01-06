@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_stocks
   get 'my_portfolio', to: "users#my_portfolio"
   devise_for :users
   get "stock/search", to: "stock#find_stock"
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'welcome#index' 
+  root  "users#my_portfolio"
 
 #   resources :stocks
 
