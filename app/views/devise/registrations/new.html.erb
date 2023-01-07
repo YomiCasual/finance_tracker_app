@@ -12,6 +12,19 @@
 
         <%= devise_error_messages! %>
 
+	<div class="mb-4">
+    	<%= f.label :first_name, class: "label-field" %>
+        <%= f.text_field :first_name, autofocus: true,
+                              class: "input-field"
+            %>
+    </div>
+    <div class="mb-4">
+    	<%= f.label :last_name, class: "label-field" %>
+        <%= f.text_field :last_name, autofocus: true,
+                              class: "input-field"
+            %>
+    </div>
+
         <div class="mb-4">
             <%= f.label :email, class: "label-field" %>
             <%= f.email_field :email,

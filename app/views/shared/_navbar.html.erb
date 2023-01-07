@@ -5,7 +5,9 @@
 <div class="flex items-center gap-3">
 
 <%  if user_signed_in? %>
-<p class="<%= active_nav_bar(my_portfolio_path) || active_nav_bar(root_path) %>"><%= link_to current_user.email, my_portfolio_path %></p>
+<p class="<%= active_nav_bar(edit_user_registration_path)  %> space-x-1">
+<%= fa_icon "user" %>
+<%= link_to current_user.full_name, edit_user_registration_path %></p>
 
 <%= button_to "Sign Out", destroy_user_session_path, method: :delete, form: {data: {  turbo: false,turbo_confirm: "Are you sure"} } , class: "btn-primary" %>
 

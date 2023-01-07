@@ -1,5 +1,9 @@
-<%= turbo_stream.update("stock_card") do %>
-<div class="!w-[300px] ">
+<%= turbo_stream.update("flash_card") do %>
 	<%= render 'shared/flash' %>
-</div>
+<% end %>
+
+<% if @stock %>
+<%= turbo_stream.append("stock_list") do %>
+	<%= render 'users/shared/stock_list', stock: @stock %>
+<% end %>
 <% end %>

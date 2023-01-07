@@ -1,0 +1,8 @@
+<%= turbo_stream.remove("stock_list_#{@params}") do %>
+	<div class="!w-[300px] ">
+		<%= render 'shared/flash' %>
+	</div>
+<% end %>
+<%= turbo_stream.update("flash_card") do %>
+		<%= render 'shared/flash' %>
+<% end %>
